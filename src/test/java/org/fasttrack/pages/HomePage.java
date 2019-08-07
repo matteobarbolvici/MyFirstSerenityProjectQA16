@@ -47,6 +47,7 @@ public class HomePage extends PageObject {
         Assert.assertTrue("Successful Subscription message is not displayed",successfulSubscription.isDisplayed());
     }
 
+
     public void typeNewsletterEmail(){
         newsletterInputField.click();
         newsletterInputField.sendKeys("matteozaffglau_ro@yahoo.com");
