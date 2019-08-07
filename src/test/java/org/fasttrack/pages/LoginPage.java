@@ -20,6 +20,7 @@ public class LoginPage extends PageObject {
     @FindBy(css = ".error-msg span")
     private WebElementFacade errorMessageSpan;
 
+
     public void setEmailField(String email) {
         typeInto(emailField, email);
     }
