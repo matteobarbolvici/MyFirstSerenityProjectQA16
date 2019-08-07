@@ -61,6 +61,7 @@ public class LoginTest {
         homePageSteps.typeNewsLetterAddress();
         homePageSteps.clickSubscribeButton();
         homePageSteps.checkSuccessfulSubscriptionIsDipslayed();
+
     }
 
 
