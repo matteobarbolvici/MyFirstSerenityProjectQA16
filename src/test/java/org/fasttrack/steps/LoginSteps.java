@@ -26,6 +26,8 @@ public class LoginSteps {
         loginPage.clickLoginButton();
     }
 
+
+
     @Step
     public void checkLoggedIn(String username){
         Assert.assertTrue("The username is not correct!",accountPage.isLoggedIn(username));

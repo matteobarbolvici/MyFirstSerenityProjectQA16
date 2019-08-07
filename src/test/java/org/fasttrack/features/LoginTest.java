@@ -4,6 +4,7 @@ package org.fasttrack.features;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.fasttrack.steps.HomePageSteps;
 import org.fasttrack.steps.LoginSteps;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,6 +26,9 @@ public class LoginTest {
     @Steps
     private LoginSteps loginSteps;
 
+    @Steps
+    private HomePageSteps homePageSteps;
+
 
     private String userEmail = "cosmin@fasttrackit.org";
     private String userPass = "123456";
@@ -45,10 +49,20 @@ public class LoginTest {
     }
 
     @Test
-    public void clickSubscribeButton() {
-        loginSteps.navigateToLoginPage();
-        clickSubscribeButton();
+    public void invalidSubscribe(){
+        validLoginTest();
+        homePageSteps.clickSubscribeButton();
+        homePageSteps.checkInvalidNewsletterEntryErrMsgIsDisplayed();
     }
+
+    @Test
+    public void successfulSubscription(){
+        validLoginTest();
+        homePageSteps.typeNewsLetterAddress();
+        homePageSteps.clickSubscribeButton();
+        homePageSteps.checkSuccessfulSubscriptionIsDipslayed();
+    }
+
 
 
 }
